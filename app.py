@@ -22,13 +22,13 @@ color: white;
 </style>
 """, unsafe_allow_html=True)
 
----------- App Title ----------
+
 
 st.title("🌾 Crop Recommendation System")
 
 api_key = "d56fb2ef217db80dee4a005b2c8e25e4"
 
----------- Weather fetch helpers ----------
+
 
 def get_weather(lat, lon):
 res = requests.get(
@@ -53,7 +53,7 @@ return res.get("display_name", "Unknown Location")
 except:
 return "Unknown Location"
 
----------- Fertilizer recommendation dictionary ----------
+
 
 fertilizer_data = {
 "rice": "Nitrogen: 100 kg/ha, Phosphorus: 50 kg/ha, Potassium: 50 kg/ha",
@@ -83,7 +83,7 @@ fertilizer_data = {
 def get_fertilizer_recommendation(crop):
 return fertilizer_data.get(crop.lower(), "Generic recommendation: Nitrogen: 45 kg/ha, Phosphorus: 20 kg/ha")
 
----------- Session State Setup ----------
+
 
 if "weather_data" not in st.session_state:
 st.session_state.weather_data = {
@@ -104,7 +104,7 @@ st.session_state.weather_message = None
 if "weather_error" not in st.session_state:
 st.session_state.weather_error = None
 
----------- Optional Location Autofill ----------
+
 
 st.subheader("📍 Optional Weather Auto-fill")
 cols = st.columns([8, 1])
@@ -131,7 +131,7 @@ except Exception as e:
     st.session_state.weather_message = None  
     st.session_state.weather_error = f"⚠ Could not fetch weather data: {e}"
 
----------- Show Results ONLY if Clicked ----------
+
 
 if st.session_state.show_location_result:
 if st.session_state.location_name:
@@ -141,7 +141,6 @@ st.info(st.session_state.weather_message)
 if st.session_state.weather_error:
 st.error(st.session_state.weather_error)
 
----------- Inputs Section WITHOUT Farmer Images ----------
 
 st.subheader("🧪 Enter Soil and Weather Data")
 
@@ -172,7 +171,7 @@ value=st.session_state.weather_data["rainfall"]
 
 st.markdown("</div>", unsafe_allow_html=True)
 
----------- Prediction Button ----------
+
 
 if st.button("Predict Crop"):
 try:
