@@ -48,7 +48,7 @@ def get_weather(lat, lon):
 def get_location_name(lat, lon):
     try:
         headers = {
-            "User-Agent": "crop-recommender/1.0 (your_email@example.com)"
+            "User-Agent": "crop-recommender/1.0 (mvsdhanushya@gmail.com)"
         }
         url = f"https://nominatim.openstreetmap.org/reverse?lat={lat}&lon={lon}&format=json"
         res = requests.get(url, headers=headers).json()
