@@ -2,13 +2,7 @@ from streamlit_geolocation import streamlit_geolocation
 import streamlit as st
 import requests
 import joblib
-
----------- Custom Page Setup ----------
-
 st.set_page_config(page_title="Crop Recommender", page_icon="🌾")
-
----------- Custom Styling ----------
-
 st.markdown("""
 <style>
 body {
