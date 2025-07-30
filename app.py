@@ -31,7 +31,7 @@ api_key = "d56fb2ef217db80dee4a005b2c8e25e4"
 
 
 def get_weather(lat, lon):
-res = requests.get(
+    res = requests.get(
 f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&units=metric&appid={api_key}"
 ).json()
 if "main" not in res:
