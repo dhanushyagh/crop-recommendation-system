@@ -1,6 +1,7 @@
 from streamlit_geolocation import streamlit_geolocation 
 import streamlit as st 
-import requests import joblib
+import requests 
+import joblib
 
 #---------- Custom Page Setup ----------
 
